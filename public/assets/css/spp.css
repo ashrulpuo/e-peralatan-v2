@@ -1,0 +1,65 @@
+.form-control-disp{
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 7px 12px;
+	background-color: #f9f9f9;
+}
+.label-det{
+	font-size: medium;
+    padding: 5px 24px;
+    border-radius: 12px;
+}
+.wrapper-page-spp{
+  margin: 0% auto;
+  position: relative;
+  max-width: 982px;
+}
+
+.navigation-rp li{
+    list-style: none;	
+}
+.navigation-rp li a{
+    background-color: #f5f5f5;
+    padding: 8px 10px 8px 20px;
+    border-bottom: 1px solid #dedede;
+	display: list-item;
+}
+.navigation-rp li a:hover{
+	background-color:#F00;
+}
+.navigation-rp{
+	padding-left:0px;
+	margin:0px;
+}
+
+.doc-required li{
+    min-height: 44px;
+    font-weight: 500;
+}
+.doc-required li i{
+	margin-right:15px;
+}
+.doc-required li .icon{
+	margin-top:1px
+}
+.text-left{
+	text-align:left !important;
+}
+.checker-kus, .checker-kus input, .checker-kus span { width:16px !important; height:16px !important}
+.checker-kus span:after{top:-2px !important;left:-2px !important}
+
+.text-footer {
+  color: #696969;
+}
+.carousel-overlay{
+	background-color: #000;
+    opacity: 0.7;
+}
+.panel-body ol li{
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+#colored-justified-tab2, #colored-justified-tab1, #colored-justified-tab3{
+	height: 290px;
+    overflow: auto;
+}
