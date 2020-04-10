@@ -77,31 +77,47 @@
                         <h6 class="panel-title">Admin</h6>
                       </div>
                       <div class="panel-body" style="height: 330px;">
-                        <form action="admin/admin_index.html" name="login" id="login" class="form-horizontal" method="post" accept-charset="utf-8">
-                          <div class="form-group has-feedback has-feedback-left" style="margin-left:10px; margin-right:10px">
-                            <input class="form-control" align="text-center" name="username" id="username" type="text" required placeholder="ID Admin">
-                            <div class="form-control-feedback">
-                            </div>
+                       <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <div class="form-group row">
+                          <div class="col-md-12">
+                            <input id="email" type="email" placeholder="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                           </div>
-                          <div class="form-group has-feedback has-feedback-left" style="margin-left:10px; margin-right:10px">
-                            <input class="form-control" name="password" id="password" type="password" required placeholder="Katalaluan">
-                            <div class="form-control-feedback">
-                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-md-12">
+                            <input id="password" type="password" placeholder="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                           </div>
-                          <div class="form-group" style="margin-left:10px; margin-right:10px; margin-bottom:10px">
-                            <button class="btn btn-primary btn-block" type="submit">Log masuk</button>
-                          </div>
-                        </form>   
-                      </div>
+                        </div>
+                        <div class="form-group" style="margin-left:10px; margin-right:10px; margin-bottom:10px">
+                          <button type="submit" class="btn btn-primary btn-block">
+                            {{ __('Log masuk') }}
+                          </button>
+                        </div>
+                      </form>   
                     </div>
                   </div>
                 </div>
-
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  @endsection
+</div>
+@endsection
