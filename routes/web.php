@@ -39,4 +39,5 @@ Route::post('search', 'PermohonanController@search')->name('semakan.search');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
+	Route::resource('/admin', 'AdminControler');
 });
