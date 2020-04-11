@@ -41,7 +41,11 @@ class PermohonanController extends Controller
         $id = $request->all();
         $permohonan = Permohonan::where('id_permohonan', $id['id_pemohonan'])->first();
         $status = $permohonan['status_permohonan'];
-        return view('semakan', ['status' => $status]);
+
+        if(empty($permohonan)) {
+            $status = 3;
+        }
+        return redirect()->route('semakan', ['status' => $status]);
     }
 
 

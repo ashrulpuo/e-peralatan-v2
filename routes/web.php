@@ -24,7 +24,7 @@ Route::get('permohonan', function () {
 
 Route::get('semakan', function () {
 	return view('semakan');
-});
+})->name('semakan');
 
 Route::get('semakan-permohonan', function () {
 	return view('semakan-permohonan');

@@ -9,8 +9,8 @@
 					<div class="panel panel-flat">
 						<a href="/"><img src="assets/img/official.jpg" width="980" height="180"></a>
 						<div style="padding:20px 20px 0">
-						@if(!empty($status))
-							@if($status != 1)
+						@if(request()->get('status'))
+							@if(request()->get('status') == 2)
 							<div class="col-md-12">
 								<div class="box box-default">
 									<!-- /.box-header -->
@@ -24,7 +24,7 @@
 									<!-- /.box-body -->
 								</div>
 							</div>
-							@else
+							@elseif(request()->get('status') == 1)
 							<div class="col-md-12">
 								<div class="box box-default">
 									<!-- /.box-header -->
@@ -33,6 +33,20 @@
 											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 											<h4><i class="icon fa fa-check"></i> Status permohonan : Tidak berjaya</h4>
 											Status permohonan anda belum disahkan, sila simpan no permohonan untuk tujuan semakan.
+										</div>
+									</div>
+									<!-- /.box-body -->
+								</div>
+							</div>
+							@elseif(request()->get('status') == 3)
+							<div class="col-md-12">
+								<div class="box box-default">
+									<!-- /.box-header -->
+									<div class="box-body">
+										<div class="alert alert-success alert-dismissible">
+											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+											<h4><i class="icon fa fa-check"></i> no permohonan salah</h4>
+											sila cek semula no permohonan anda.
 										</div>
 									</div>
 									<!-- /.box-body -->
