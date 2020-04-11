@@ -15,13 +15,16 @@ class CreatePemohonanTable extends Migration
     {
         Schema::create('pemohonan', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pemohon');
+            $table->string('nama');
+            $table->string('jawatan');
+            $table->string('bahagian');
             $table->string('tujuan');
             $table->string('tempat_digunakan');
-            $table->date('tarkh_pinjam');
-            $table->date('tarkh_pulang');
+            $table->date('tarikh_pinjam');
+            $table->date('tarikh_pulang');
             $table->integer('id_peralatan');
             $table->integer('status_permohonan');
+            $table->string('id_permohonan');
             $table->timestamps();
         });
     }

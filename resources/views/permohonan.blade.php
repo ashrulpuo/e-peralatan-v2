@@ -19,7 +19,8 @@
                       </div>
                     </div>
                     <div class="panel-body">
-                      <form action="prosesBorang.html" class="form-horizontal" role="form" id="kpj_pelawat" method="post" accept-charset="utf-8">
+                      <form action="{{ route('permohonan.store') }}" class="form-horizontal" role="form" id="kpj_pelawat" method="post" accept-charset="utf-8">
+                        @csrf
                         <legend class="text-bold">Maklumat Pemohon</legend>
                         <div class="form-group">
                           <label class="col-sm-3 control-label"><span style="color:red">* </span>Nama</label>
@@ -36,7 +37,7 @@
                         <div class="form-group">
                           <label class="col-sm-3 control-label"><span style="color:red">* </span>Daerah/Bahagian</label>
                           <div class="col-sm-6">
-                            <select name="daerah_bahagian" id="daerah_bahagian" class="form-control" required>
+                            <select name="bahagian" id="bahagian" class="form-control" required>
                               <option value="" selected="selected">-Sila Pilih-</option>
                               <option value="Bahagian Pengurusan Sungai Dan Banjir">Bahagian Pengurusan Sungai Dan Banjir</option>
                               <option value="Bahagian Pembangunan Korporat & Audit Prestasi">Bahagian Pembangunan Korporat & Audit Prestasi</option>
@@ -68,7 +69,7 @@
                         <div class="form-group">
                           <label class="col-sm-3 control-label"><span style="color:red">* </span>Tempat Digunakan</label>
                           <div class="col-sm-4">
-                            <input type="text" name="tempatDigunakan" value="" id="tempatDigunakan" class="form-control" placeholder="Tempat Digunakan" required>
+                            <input type="text" name="tempat_digunakan" value="" id="tempatDigunakan" class="form-control" placeholder="Tempat Digunakan" required>
                           </div>
                         </div>
                         <div class="form-group">
@@ -76,9 +77,9 @@
                           <font size="2">Tarikh Pinjam</font>
                         </label>
                         <div class="col-sm-4">
-                          <input required name="tarikhPinjam" id="datepicker" width="312" autocomplete="off"/>
+                          <input required name="tarikh_pinjam" id="datepicker" width="312" autocomplete="off"/>
                           <script>
-                            $('#datepicker').datepicker({ dateFormat: 'dd-mm-yy' });
+                            $('#datepicker').datepicker({ format: 'dd/mm/yyyy' });
                           </script>
                         </div>
                       </div>
@@ -87,39 +88,42 @@
                           <font size="2">Tarikh Pulang</font>
                         </label>
                         <div class="col-sm-8">
-                          <input required name="tarikhPulang" id="datepicker2" width="312" autocomplete="off"/>
+                          <input required name="tarikh_pulang" id="datepicker2" width="312" autocomplete="off"/>
                           <script>
-                            $('#datepicker2').datepicker({ dateFormat: 'dd-mm-yy' });
+                            $('#datepicker2').datepicker({ format: 'dd/mm/yyyy', });
                           </script>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-sm-3 control-label"><span style="color:red">* </span>Peralatan 1</label>
                         <div class="col-sm-6">
-                          <select name="peralatan1" id="peralatan1" class="form-control" required>
+                          <select name="id_peralatan1" id="peralatan1" class="form-control" required>
                             <option value="" selected="selected">-Sila Pilih-</option>
+                            <option value="01">12</option>
                           </select>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-sm-3 control-label">Peralatan 2</label>
                         <div class="col-sm-6">
-                          <select name="peralatan2" id="peralatan2" class="form-control">
+                          <select name="id_peralatan2" id="id_peralatan" class="form-control">
                             <option value="" selected="selected">-Sila Pilih-</option>
+                             <option value="01">12</option>
                           </select>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-sm-3 control-label">Peralatan 3</label>
                         <div class="col-sm-6">
-                          <select name="peralatan3" id="peralatan3" class="form-control">
+                          <select name="id_peralatan3" id="id_peralatan" class="form-control">
                             <option value="" selected="selected">-Sila Pilih-</option>
+                             <option value="01">12</option>
                           </select>
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-sm-12" style="text-align: center">
-                          <button name="Hantar" type="submit" id="Hantar" value="true" class="btn btn-success waves-effect waves-light">Hantar</button>
+                          <button type="submit" id="Hantar" value="true" class="btn btn-success waves-effect waves-light">Hantar</button>
                           <a href="/"><button name="Batal" type="button" id="Batal" value="true" class="btn btn-warning">Batal</button></a>
                         </div>
                       </div>

@@ -26,6 +26,21 @@
                   <a href="#carousel-example-captions" role="button" data-slide="prev" class="left carousel-control"> </a>
                   <a href="#carousel-example-captions" role="button" data-slide="next" class="right carousel-control"> </a>
                 </div>
+                @if( request()->get('ref_num') )
+                <div class="col-md-12">
+                  <div class="box box-default">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="icon fa fa-check"></i> Permohonan Berjaya No.Permohonan : {{ request()->get('ref_num') }}</h4>
+                        Permohonan Anda telah berjaya, sila simpan no permohonan untuk tujuan semakan.
+                      </div>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                </div>
+                @endif
                 <div class="row">
                   <div class="col-md-8">
                     <div class="tabbable panel panel-info panel-bordered mb-10" style="min-height:385px">

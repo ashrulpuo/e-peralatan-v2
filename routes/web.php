@@ -34,6 +34,9 @@ Route::get('cetak-permohonan', function () {
 	return view('cetak-permohonan');
 });
 
+Route::post('permohonan', 'PermohonanController@store')->name('permohonan.store');
+Route::post('search', 'PermohonanController@search')->name('semakan.search');
+
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/home', 'HomeController@index')->name('home');
 });

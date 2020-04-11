@@ -16,6 +16,8 @@
         <link href="assets/css/colors.css" rel="stylesheet" type="text/css">
         <link href="assets/css/spp.css" rel="stylesheet" type="text/css" />
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheets">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
         <!-- /global stylesheets -->
         <!-- Default JS Header -->
         <!-- Core JS files -->
@@ -33,6 +35,7 @@
         <script type="text/javascript" src="assets/js/sweet_alert.min.js"></script>
         <script type="text/javascript" src="assets/js/select2.min.js"></script>
         <script type="text/javascript" src="assets/js/app.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     </head>
     <body class="login-container login-cover">
         
