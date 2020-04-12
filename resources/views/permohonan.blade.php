@@ -85,7 +85,7 @@
                       </div>
                       <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-3 control-label"><span style="color:red">* </span>
-                          <font size="2">Tarikh Pulang</font>
+                          <font size="2">Tarikh Dijangka Pulang</font>
                         </label>
                         <div class="col-sm-8">
                           <input required name="tarikh_pulang" id="datepicker2" width="312" autocomplete="off"/>

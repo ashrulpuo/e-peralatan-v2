@@ -54,8 +54,9 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="topnav">
-											<a class="active" href="admin_index">Permohonan Baru</a>
+											<a class="active" href="{{ route('home.index') }}">Permohonan Baru</a>
 											<a href="{{ route('senarai.index') }}">Senarai Permohonan</a>
+											<a href="{{ route('laporan.index') }}">Laporan</a>
 											<a class="dropdown-item" href="{{ route('logout') }}"
 											onclick="event.preventDefault();
 											document.getElementById('logout-form').submit();">

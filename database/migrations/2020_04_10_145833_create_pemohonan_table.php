@@ -22,6 +22,7 @@ class CreatePemohonanTable extends Migration
             $table->string('tempat_digunakan');
             $table->integer('status_permohonan');
             $table->string('id_permohonan');
+            $table->string('nama_pemulang');
             $table->timestamps();
         });
     }

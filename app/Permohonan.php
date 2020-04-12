@@ -14,7 +14,8 @@ class Permohonan extends Model
     	'tujuan',
     	'tempat_digunakan',
     	'status_permohonan',
-        'id_permohonan'
+        'id_permohonan',
+        'nama_pemulang'
     ];
 
     public function peralatan(){

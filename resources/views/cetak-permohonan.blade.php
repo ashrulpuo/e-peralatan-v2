@@ -19,27 +19,27 @@
 	<!-- Default CSS Header -->
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/styles.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/components.css" rel="stylesheet" type="text/css"> 
+	<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ asset('assets/css/styles.min.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ asset('assets/css/core.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ asset('assets/css/components.css') }}" rel="stylesheet" type="text/css"> 
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheets">
-	<script type="text/javascript" src="assets/js/pace.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/blockui.min.js"></script>
-	<script type="text/javascript" src="assets/js/nicescroll.min.js"></script>
-	<script type="text/javascript" src="assets/js/drilldown.js"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/pace.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/blockui.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/nicescroll.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/drilldown.js') }}"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script type="application/javascript">
 		function cbox(url,msg){if(confirm(msg)){window.location = url;}}   
 	</script>
-	<script type="text/javascript" src="assets/js/bootbox.min.js"></script>
-	<script type="text/javascript" src="assets/js/sweet_alert.min.js"></script>
-	<script type="text/javascript" src="assets/js/select2.min.js"></script>
-	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/bootbox.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/sweet_alert.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
 </head>
 <body class="login-container login-cover  pace-done sidebar-xs-indicator" data-gr-c-s-loaded="true"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
 	<div class="pace-progress-inner"></div>
@@ -58,7 +58,7 @@
 										<table align="right" border="0" id="table2">
 											<tr>
 												<th>No Permohonan:</th>
-												<td>5</td>
+												<td></td>
 											</tr>
 										</table>
 									</div>
@@ -98,7 +98,7 @@
 
 											<tr>
 												<td align="center">Dipinjam</td>
-												<td align="center">Dipulang</td>
+												<td align="center">Dijangka pulang</td>
 												<td align="center">Dipulang</td>
 												<td align="center">Diterima</td>
 											</tr>
