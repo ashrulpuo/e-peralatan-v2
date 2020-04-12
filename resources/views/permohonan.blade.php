@@ -99,25 +99,25 @@
                         <div class="col-sm-6">
                           <select name="id_peralatan1" id="peralatan1" class="form-control" required>
                             <option value="" selected="selected">-Sila Pilih-</option>
-                            <option value="011">12</option>
+                            @foreach($peralatan as $item)
+                            <option value="{{ $item->id }}">{{ $item->peralatan }} ({{ $item->model }})</option>
+                            @endforeach
                           </select>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-sm-3 control-label">Peralatan 2</label>
                         <div class="col-sm-6">
-                          <select name="id_peralatan2" id="id_peralatan" class="form-control">
+                          <select name="id_peralatan2" id="id_peralatan2" class="form-control">
                             <option value="" selected="selected">-Sila Pilih-</option>
-                             <option value="013">12</option>
                           </select>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-sm-3 control-label">Peralatan 3</label>
                         <div class="col-sm-6">
-                          <select name="id_peralatan3" id="id_peralatan" class="form-control">
+                          <select name="id_peralatan3" id="id_peralatan3" class="form-control">
                             <option value="" selected="selected">-Sila Pilih-</option>
-                             <option value="012">12</option>
                           </select>
                         </div>
                       </div>
@@ -139,4 +139,62 @@
   </div>
 </div>
 </div>
+<script type="text/javascript">
+jQuery(document).ready(function ()
+{
+  jQuery('select[name="id_peralatan1"]').on('change',function(){
+     var id_peralatan1 = jQuery(this).val();
+     if(id_peralatan1)
+     {
+        jQuery.ajax({
+           url : 'dropdownlist/peralatan/' + id_peralatan1,
+           type : "GET",
+           dataType : "json",
+           success:function(data)
+           {
+              console.log(data);
+              jQuery('select[name="id_peralatan2"]').empty();
+              $('select[name="id_peralatan2"]').append('<option value="" selected="selected">-Sila Pilih-</option>');
+              jQuery.each(data, function(key,value){
+                console.log(value['peralatan']);
+                 $('select[name="id_peralatan2"]').append('<option value="'+ value['id'] +'">'+ value['peralatan'] + ' (' + value['model'] + ' )' + '</option>');
+              });
+           }
+        });
+     }
+     else
+     {
+        $('select[name="id_peralatan2"]').empty();
+     }
+  });
+
+  //peralatan 3
+  jQuery('select[name="id_peralatan2"]').on('change',function(){
+     var id_peralatan2 = jQuery(this).val();
+     var id_1 = $('select[name="id_peralatan1"]').val()
+     if(id_peralatan2)
+     {
+        jQuery.ajax({
+           url : 'dropdownlist/thirdItem/' + id_peralatan2 + '/' + id_1 ,
+           type : "GET",
+           dataType : "json",
+           success:function(data)
+           {
+              console.log(data);
+              jQuery('select[name="id_peralatan3"]').empty();
+              $('select[name="id_peralatan3"]').append('<option value="" selected="selected">-Sila Pilih-</option>');
+              jQuery.each(data, function(key,value){
+                console.log(value['peralatan']);
+                 $('select[name="id_peralatan3"]').append('<option value="'+ key +'">'+ value['peralatan'] + ' (' + value['model'] + ' )' + '</option>');
+              });
+           }
+        });
+     }
+     else
+     {
+        $('select[name="id_peralatan3"]').empty();
+     }
+  });
+});
+</script>
 @endsection

@@ -62,19 +62,19 @@
 			<tr>
 				<th scope="row">Peralatan 1</th>
 				<td>
-					{{ !empty($data['peralatan'][0]['id_peralatan']) ? $data['peralatan'][0]['id_peralatan'] : 'Tiada' }}
+					{{ !empty($data['peralatan'][0]['id_peralatan']) ? $data['peralatan'][0]['detail_peralatan']['peralatan'] : 'Tiada' }}
 				</td>
 			</tr>
 			<tr>
 				<th scope="row">Peralatan 2</th>
 				<td>
-					{{ !empty($data['peralatan'][1]['id_peralatan']) ? $data['peralatan'][1]['id_peralatan'] : 'Tiada' }}
+					{{ !empty($data['peralatan'][1]['id_peralatan']) ? $data['peralatan'][1]['detail_peralatan']['peralatan'] : 'Tiada' }}
 				</td>
 			</tr>
 			<tr>
 				<th scope="row">Peralatan 3</th>
 				<td>
-					{{ !empty($data['peralatan'][2]['id_peralatan']) ? $data['peralatan'][2]['id_peralatan'] : 'Tiada' }}
+					{{ !empty($data['peralatan'][2]['id_peralatan']) ? $data['peralatan'][2]['detail_peralatan']['peralatan'] : 'Tiada' }}
 				</td>
 			</tr>
 		</tbody>

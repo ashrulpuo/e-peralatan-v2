@@ -18,4 +18,9 @@ class PinjamPeralatan extends Model
     {
         return $this->belongsTo(Permohonan::class, 'id_permohonan', 'id_permohonan');
     }
+
+    public function detailPeralatan()
+    {
+        return $this->hasOne(Peralatan::class, 'id', 'id_peralatan');
+    }
 }

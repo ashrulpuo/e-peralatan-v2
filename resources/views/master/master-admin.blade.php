@@ -36,6 +36,7 @@
 	<script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+	@stack('custom-scripts')
 </head>
 <body class="login-container login-cover">
 	<div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">

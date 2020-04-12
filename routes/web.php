@@ -18,9 +18,9 @@ Route::get('/', function () {
 	return redirect('home');
 });
 
-Route::get('permohonan', function () {
-	return view('permohonan');
-});
+Route::get('permohonan', 'PermohonanController@permohonan')->name('permohonan');
+Route::get('dropdownlist/peralatan/{id}','PermohonanController@changeItem');
+Route::get('dropdownlist/thirdItem/{id}/{id2}','PermohonanController@changeItemThird');
 
 Route::get('semakan', function () {
 	return view('semakan');

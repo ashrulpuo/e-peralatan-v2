@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Permohonan;
 use App\PinjamPeralatan;
+use App\Peralatan;
 use Illuminate\Http\Request;
 
 class PermohonanController extends Controller
@@ -50,5 +51,22 @@ class PermohonanController extends Controller
         return redirect()->route('semakan', ['status' => $status]);
     }
 
+    public function permohonan()
+    {
+        $peralatan = Peralatan::where('status_peralatan', 0)->get();
+        return view('permohonan', ['peralatan' => $peralatan]);
+    }
+
+    public function changeItem($id)
+    {
+        $peralatan = Peralatan::whereNotIn('id', [$id])->where('status_peralatan', 0)->get();
+        return json_encode($peralatan);
+    }
+
+    public function changeItemThird($id,$id2)
+    {
+        $peralatan = Peralatan::whereNotIn('id', [$id, $id2])->where('status_peralatan', 0)->get();
+        return json_encode($peralatan);
+    }
 
 }

@@ -25,13 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $permohonan = Permohonan::where('id_permohonan', 1)->with('peralatan')->orderBy('id', 'DESC')->get()->toArray();
+        $permohonan = Permohonan::where('status_permohonan', 1)->with('peralatan.detailPeralatan')->orderBy('id', 'DESC')->get()->toArray();
         return view('admin.home', ['data' => $permohonan]);
     }
 
     public function show($id)
     {
-        $permohonan = Permohonan::where('id',$id)->with('peralatan')->first()->toArray();
+        $permohonan = Permohonan::where('id',$id)->with('peralatan.detailPeralatan')->first()->toArray();
         return view('admin.proses-permohonan', ['data' => $permohonan]);
     }
 
