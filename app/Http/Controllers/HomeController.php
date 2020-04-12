@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $permohonan = Permohonan::with('peralatan')->orderBy('id', 'DESC')->get()->toArray();
+        $permohonan = Permohonan::where('id_permohonan', 1)->with('peralatan')->orderBy('id', 'DESC')->get()->toArray();
         return view('admin.home', ['data' => $permohonan]);
     }
 

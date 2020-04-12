@@ -39,6 +39,7 @@ Route::post('search', 'PermohonanController@search')->name('semakan.search');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('home', 'HomeController');
+	Route::resource('senarai', 'SenaraiPermohonanController');
 	Route::get('reject/{id}', 'HomeController@reject')->name('home.reject');
 	Route::get('change/{id}', 'HomeController@change')->name('home.change');
 	Route::get('approve/{id}', 'HomeController@approve')->name('approve');
