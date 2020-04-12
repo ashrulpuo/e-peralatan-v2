@@ -46,7 +46,7 @@
 			<div class="row">
 				<div class="wrapper-page-spp">
 					<div class="panel panel-flat">
-						<a href="index.html"><img src="assets/img/official.jpg" width="980" height="180"></a>
+						<a href="index.html"><img src="{{ asset('assets/img/official.jpg') }}" width="980" height="180"></a>
 						<div style="padding:20px 20px 0">
 							<div class="topnav">
 								<a class="active" href="admin_index">Permohonan Baru</a>
@@ -68,18 +68,21 @@
 									<th align="center">Maklumat Pemohon</th>
 									<th align="center">Maklumat Peralatan</th>  
 								</tr>
+								@foreach($data as $key => $pemohon)
 								<tr>
-									<td>1.</td>
-									<td>Nama: <br>
-										Jawatan:<br>
-										Bahagian:
-										<p><a href="admin_prosesPermohonan.html"><button name="lihat_lanjut" type="submit" id="lihat_lanjut" value="true" class="btn btn-info btn-sm" >Lihat lanjut</button></a></p>
+									<td>{{ $key+1 }} .</td>
+									<td>Nama: {{ $pemohon['nama'] }}<br>
+										Jawatan: {{ $pemohon['jawatan'] }}<br>
+										Bahagian: {{ $pemohon['bahagian'] }}
+										<p><a href="{{ route('home.show', $pemohon['id']) }}"><button name="lihat_lanjut" type="submit" id="lihat_lanjut" value="true" class="btn btn-info btn-sm" >Lihat lanjut</button></a></p>
 									</td>
-									<td>Peralatan 1:<br>
-										Peralatan 2:<br>
-										Peralatan 3:
+									<td>Peralatan 1: {{ !empty($pemohon['peralatan'][0]['id_peralatan']) ? $pemohon['peralatan'][0]['id_peralatan'] : '-' }}<br>
+
+										Peralatan 2: {{ !empty($pemohon['peralatan'][1]['id_peralatan']) ? $pemohon['peralatan'][0]['id_peralatan'] : '-' }}<br>
+										Peralatan 3: {{ !empty($pemohon['peralatan'][2]['id_peralatan']) ? $pemohon['peralatan'][0]['id_peralatan'] : '-' }}
 									</td>
 								</tr>
+								@endforeach
 							</table>
 						</div> 
 					</div>

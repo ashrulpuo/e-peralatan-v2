@@ -20,9 +20,6 @@ class CreatePemohonanTable extends Migration
             $table->string('bahagian');
             $table->string('tujuan');
             $table->string('tempat_digunakan');
-            $table->date('tarikh_pinjam');
-            $table->date('tarikh_pulang');
-            $table->integer('id_peralatan');
             $table->integer('status_permohonan');
             $table->string('id_permohonan');
             $table->timestamps();

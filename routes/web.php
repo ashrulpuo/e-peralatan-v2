@@ -38,6 +38,8 @@ Route::post('permohonan', 'PermohonanController@store')->name('permohonan.store'
 Route::post('search', 'PermohonanController@search')->name('semakan.search');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('/home', 'HomeController@index')->name('home');
-	Route::resource('/admin', 'AdminControler');
+	Route::resource('home', 'HomeController');
+	Route::get('reject/{id}', 'HomeController@reject')->name('home.reject');
+	Route::get('change/{id}', 'HomeController@change')->name('home.change');
+	Route::get('approve/{id}', 'HomeController@approve')->name('approve');
 });

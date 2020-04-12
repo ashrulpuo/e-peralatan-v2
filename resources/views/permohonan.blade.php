@@ -99,7 +99,7 @@
                         <div class="col-sm-6">
                           <select name="id_peralatan1" id="peralatan1" class="form-control" required>
                             <option value="" selected="selected">-Sila Pilih-</option>
-                            <option value="01">12</option>
+                            <option value="011">12</option>
                           </select>
                         </div>
                       </div>
@@ -108,7 +108,7 @@
                         <div class="col-sm-6">
                           <select name="id_peralatan2" id="id_peralatan" class="form-control">
                             <option value="" selected="selected">-Sila Pilih-</option>
-                             <option value="01">12</option>
+                             <option value="013">12</option>
                           </select>
                         </div>
                       </div>
@@ -117,7 +117,7 @@
                         <div class="col-sm-6">
                           <select name="id_peralatan3" id="id_peralatan" class="form-control">
                             <option value="" selected="selected">-Sila Pilih-</option>
-                             <option value="01">12</option>
+                             <option value="012">12</option>
                           </select>
                         </div>
                       </div>

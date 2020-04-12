@@ -13,10 +13,11 @@ class Permohonan extends Model
     	'bahagian',
     	'tujuan',
     	'tempat_digunakan',
-    	'tarikh_pinjam',
-    	'tarikh_pulang',
-    	'id_peralatan',
     	'status_permohonan',
         'id_permohonan'
     ];
+
+    public function peralatan(){
+        return $this->hasMany(PinjamPeralatan::class, 'id_permohonan', 'id_permohonan');
+    }
 }
