@@ -104,43 +104,42 @@
 												<td align="center">Diterima</td>
 											</tr>
 											<tr>
-											@foreach($data['peralatan'] as $key => $item)
-												<td>{{ $key + 1 }}</td>
-												<td>{{ $item['detail_peralatan']['no_asset']}}  </td>
-												<td> {{ $item['detail_peralatan']['model']}} </td>
-												<td> {{ $item['tarikh_pinjam']}} </td>
-												<td>{{ $item['tarikh_pulang']}}  </td>
-											@endforeach
-												<td>  
-													@if($data['status_permohonan'] == 1)
-													Permohonan Baru
-													@elseif($data['status_permohonan'] == 2)
-													Telah Diluluskan
-													@elseif($data['status_permohonan'] == 3)
-													Permohonan Ditolak
-													@else($data['status_permohonan'] == 4)
-													Telah Diluluskan
-													@endif
-												</td>
-											@foreach($data['peralatan'] as $key => $item)
-												<td> {{ date('d-m-y', strtotime($item['updated_at'])) }} </td>
-												<td> {{ date('d-m-y', strtotime($item['updated_at'])) }} </td>
-											@endforeach
-												<td> 
-													@if($data['status_permohonan'] == 4)
-													peralatan dihantar
-													@endif
-												</td>
-
-											</tr>
-											<tr>
-												<td colspan="4">
-													<p>&nbsp;&nbsp;</p>
-													<p>.....................................
-														<br>(Tandatangan Peminjam)</p>
-														<p>Nama:<br>
-															Jawatan:<br>
-														Tarikh:</p>
+												@foreach($data['peralatan'] as $key => $item)
+												<tr>
+													<td>{{ $key + 1 }}</td>
+													<td>{{ $item['detail_peralatan']['no_asset']}}  </td>
+													<td> {{ $item['detail_peralatan']['model']}} </td>
+													<td> {{ $item['tarikh_pinjam']}} </td>
+													<td>{{ $item['tarikh_pulang']}}  </td>
+													<td>  
+														@if($data['status_permohonan'] == 1)
+														Permohonan Baru
+														@elseif($data['status_permohonan'] == 2)
+														Telah Diluluskan
+														@elseif($data['status_permohonan'] == 3)
+														Permohonan Ditolak
+														@else($data['status_permohonan'] == 4)
+														Telah Diluluskan
+														@endif
+													</td>
+													<td> {{ date('d-m-y', strtotime($item['updated_at'])) }} </td>
+													<td> {{ date('d-m-y', strtotime($item['updated_at'])) }} </td>
+													<td> 
+														@if($data['status_permohonan'] == 4)
+														peralatan dihantar
+														@endif
+													</td>
+												</tr>
+												@endforeach
+										</tr>
+										<tr>
+											<td colspan="4">
+												<p>&nbsp;&nbsp;</p>
+												<p>.....................................
+													<br>(Tandatangan Peminjam)</p>
+													<p>Nama:<br>
+														Jawatan:<br>
+													Tarikh:</p>
 												</td>
 												<td colspan="5">
 													<p>&nbsp;&nbsp;</p>
@@ -149,43 +148,43 @@
 														<p>Nama: En Khoir<br>
 															Jawatan:<br>
 														Tarikh:</p>
-												</td>
-											</tr>
-											<tr>
-												<td colspan="4">
-													<p>&nbsp;&nbsp;</p>
-													<p>.....................................
-														<br>(Tandatangan Pemulang)</p>
-														<p>Nama:<br>
-															Jawatan:<br>
-														Tarikh:</p>
-												</td>
-												<td colspan="5"> 
-													<p>&nbsp;&nbsp;</p>
-													<p>.....................................
-														<br>(Tandatangan Penerima)</p>
-														<p>Nama:<br>
-															Jawatan:<br>
-														Tarikh:</p>
-												</td>
-											</tr>
-										</table>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="4">
+														<p>&nbsp;&nbsp;</p>
+														<p>.....................................
+															<br>(Tandatangan Pemulang)</p>
+															<p>Nama:<br>
+																Jawatan:<br>
+															Tarikh:</p>
+														</td>
+														<td colspan="5"> 
+															<p>&nbsp;&nbsp;</p>
+															<p>.....................................
+																<br>(Tandatangan Penerima)</p>
+																<p>Nama:<br>
+																	Jawatan:<br>
+																Tarikh:</p>
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div> 
 									</div>
 								</div>
-							</div> 
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
-<div class="footer text-footer text-center">
-	<p>Bahagian Pengurusan Maklumat (BICT)<br/>
-		Jabatan Pengairan Dan Saliran Negeri Selangor<br />
-		Tingkat 5 Blok Podium Selatan Bangunan SSAAS<br />
-	40503 Shah Alam</p>
-	<p>Copyright Reserved © 2020 Bahagian Pengurusan Maklumat (BICT)<br>
-	</div>
-</body>
-</html>
+			<div class="footer text-footer text-center">
+				<p>Bahagian Pengurusan Maklumat (BICT)<br/>
+					Jabatan Pengairan Dan Saliran Negeri Selangor<br />
+					Tingkat 5 Blok Podium Selatan Bangunan SSAAS<br />
+				40503 Shah Alam</p>
+				<p>Copyright Reserved © 2020 Bahagian Pengurusan Maklumat (BICT)<br>
+				</div>
+			</body>
+			</html>

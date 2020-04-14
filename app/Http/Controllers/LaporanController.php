@@ -18,6 +18,7 @@ class LaporanController extends Controller
     public function show($id)
     {
         $pemohon = Permohonan::where('id',$id)->with('peralatan.detailPeralatan')->first()->toArray();
+        // dd($pemohon);
         return view('admin.cetak-laporan', ['data' => $pemohon]);
     }
 }
