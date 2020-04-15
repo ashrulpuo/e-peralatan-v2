@@ -137,8 +137,8 @@
 												<p>&nbsp;&nbsp;</p>
 												<p>.....................................
 													<br>(Tandatangan Peminjam)</p>
-													<p>Nama:<br>
-														Jawatan:<br>
+													<p>Nama: {{ $data['nama'] }}<br>
+														Jawatan: {{ $data['jawatan'] }}<br>
 													Tarikh:</p>
 												</td>
 												<td colspan="5">
@@ -155,8 +155,8 @@
 														<p>&nbsp;&nbsp;</p>
 														<p>.....................................
 															<br>(Tandatangan Pemulang)</p>
-															<p>Nama:<br>
-																Jawatan:<br>
+															<p>Nama: {{ $data['nama_pemulang'] }}<br>
+																Jawatan: {{ $data['jawatan_pemulang'] }}<br>
 															Tarikh:</p>
 														</td>
 														<td colspan="5"> 

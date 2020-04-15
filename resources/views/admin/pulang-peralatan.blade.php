@@ -3,7 +3,7 @@
 @section('content')
 <div class="panel panel-flat">
 	<div class="panel-heading">
-		<h5 class="panel-title">Tukar Peralatan<a class="heading-elements-toggle"><i class="icon-more"></i></a><a class="heading-elements-toggle"></a></h5>
+		<h5 class="panel-title">Pemulangan Peralatan<a class="heading-elements-toggle"><i class="icon-more"></i></a><a class="heading-elements-toggle"></a></h5>
 		<div class="heading-elements">
 
 		</div>
@@ -23,11 +23,18 @@
 			</div>
 
 			<div class="form-group">
+				<label class="col-sm-3 control-label"><span style="color:red">* </span>Jawatan</label>
+				<div class="col-sm-4">
+					<input type="text" name="jawatan_pemulang" value="" id="nama" class="form-control" placeholder="Jawatan" required>
+				</div>
+			</div>
+
+			<div class="form-group">
 				<label class="col-sm-3 control-label"><span style="color:red">* </span>Peralatan:</label>
 				<div class="col-sm-6">
 					@foreach($data['peralatan'] as $key => $data)
 					<div class="checkbox">
-						<label><input type="checkbox" name="peralatan[]" value="{{ $data['detail_peralatan']['id']}}" /> {{ $data['detail_peralatan']['model']}}</label>
+						<label><input type="checkbox" name="peralatan[]" value="{{ $data['detail_peralatan']['id']}}" /> {{ $data['detail_peralatan']['no_asset']}}</label>
 					</div>
 					@endforeach
 				</div>

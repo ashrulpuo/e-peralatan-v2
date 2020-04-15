@@ -22,6 +22,7 @@ class PermohonanController extends Controller
         $ref_num = rand(1000,9999);            
         $input['id_permohonan'] = 'P'.$ref_num;
         $input['nama_pemulang'] = 0;
+        $input['jawatan_pemulang'] = 0;
         //save to table permohonan
         $num = Permohonan::create($input);
         
