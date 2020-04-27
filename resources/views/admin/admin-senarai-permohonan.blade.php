@@ -34,10 +34,22 @@
 				Permohonan Ditolak
 				@endif
 			</td>
-			<td><a href="{{ route('pulang.show', $pemohon['id']) }}"><button name="pulang" type="button" id="pulang" value="true" class="btn btn-primary">Pulang Peralatan </button></a></td>
-			<td><a href="{{ route('home.show', $pemohon['id']) }}"><button name="pulang" type="button" id="pulang" value="true" class="btn btn-primary">Lihat lanjut </button></a></td>
+			<td>
+				@if($pemohon['status_permohonan'] != 3)
+					<a href="{{ route('pulang.show', $pemohon['id']) }}"><button name="pulang" type="button" id="pulang" value="true" class="btn btn-primary">Pulang Peralatan </button></a>
+				@else
+					<center> - </center>
+				@endif
+			</td>
+			<td>
+				@if($pemohon['status_permohonan'] != 3)
+					<a href="{{ route('home.show', $pemohon['id']) }}"><button name="pulang" type="button" id="pulang" value="true" class="btn btn-primary">Lihat lanjut </button></a>
+				@else
+					<center> - </center>
+				@endif
+			</td>
+			@endforeach
 		</tr>
-		@endforeach
 	</table>
 </div> 
 @endsection

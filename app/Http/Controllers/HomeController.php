@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Permohonan;
+use App\Peralatan;
 use DB;
 
 class HomeController extends Controller
@@ -44,7 +45,11 @@ class HomeController extends Controller
 
     public function reject($id)
     {
-        $pemohon = Permohonan::find($id);
+        $pemohon = Permohonan::where('id',$id)->with('peralatan.detailPeralatan')->first();
+        foreach($pemohon['peralatan'] as $key => $peralatan) {
+            $peralatanId = Peralatan::where('id', $peralatan['id_peralatan'])->first();
+            $peralatanId->update(['status_peralatan' => 0]);
+        }
         $pemohon->update(['status_permohonan' => 3]);
         return redirect()->route('home.index');
     }
