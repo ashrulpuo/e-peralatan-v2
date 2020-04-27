@@ -31,7 +31,7 @@
 									<div class="box-body">
 										<div class="alert alert-success alert-dismissible">
 											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-											<h4><i class="icon fa fa-check"></i> Status permohonan : Tidak berjaya</h4>
+											<h4><i class="icon fa fa-check"></i> Status permohonan : Sedang Diproses</h4>
 											Status permohonan anda belum disahkan, sila simpan no permohonan untuk tujuan semakan.
 										</div>
 									</div>

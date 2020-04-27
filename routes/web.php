@@ -45,4 +45,5 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('reject/{id}', 'HomeController@reject')->name('home.reject');
 	Route::get('change/{id}', 'HomeController@change')->name('home.change');
 	Route::get('approve/{id}', 'HomeController@approve')->name('approve');
+	Route::get('details', 'HomeController@details')->name('details');
 });

@@ -35,7 +35,7 @@
 				@endif
 			</td>
 			<td><a href="{{ route('pulang.show', $pemohon['id']) }}"><button name="pulang" type="button" id="pulang" value="true" class="btn btn-primary">Pulang Peralatan </button></a></td>
-			<td><a href="admin_prosesPermohonan.html"><button name="pulang" type="button" id="pulang" value="true" class="btn btn-primary">Lihat lanjut </button></a></td>
+			<td><a href="{{ route('home.show', $pemohon['id']) }}"><button name="pulang" type="button" id="pulang" value="true" class="btn btn-primary">Lihat lanjut </button></a></td>
 		</tr>
 		@endforeach
 	</table>

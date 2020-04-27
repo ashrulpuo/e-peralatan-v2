@@ -49,14 +49,14 @@
 				<div class="row">
 					<div class="wrapper-page-spp">
 						<div class="panel panel-flat">
-							<a href="index.html"><img src="{{ asset('assets/img/official.jpg') }}" width="980" height="180"></a>
+							<a href="{{ route('home.index') }}"><img src="{{ asset('assets/img/official.jpg') }}" width="980" height="180"></a>
 							<div style="padding:20px 20px 0">
 								<div class="row">
 									<div class="col-md-12">
 										<div class="topnav">
-											<a class="active" href="{{ route('home.index') }}">Permohonan Baru</a>
-											<a href="{{ route('senarai.index') }}">Senarai Permohonan</a>
-											<a href="{{ route('laporan.index') }}">Laporan</a>
+											<a class="{{ (request()->is('home')) ? 'active' : '' }}" href="{{ route('home.index') }}">Permohonan Baru</a>
+											<a class="{{ (request()->is('senarai')) ? 'active' : '' }}" href="{{ route('senarai.index') }}">Senarai Permohonan</a>
+											<a class="{{ (request()->is('laporan')) ? 'active' : '' }}" href="{{ route('laporan.index') }}">Laporan</a>
 											<a class="dropdown-item" href="{{ route('logout') }}"
 											onclick="event.preventDefault();
 											document.getElementById('logout-form').submit();">

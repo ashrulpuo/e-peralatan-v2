@@ -54,5 +54,10 @@ class HomeController extends Controller
         return view('admin.tukar-peralatan');
     }
 
+    public function details()
+    {
+        return view('admin.tukar-peralatan');
+    }
+
     //code status 1 = new permohonan, 2 = approve, 3 = reject
 }
