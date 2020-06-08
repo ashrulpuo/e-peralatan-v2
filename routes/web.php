@@ -46,4 +46,5 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('change/{id}', 'HomeController@change')->name('home.change');
 	Route::get('approve/{id}', 'HomeController@approve')->name('approve');
 	Route::get('details', 'HomeController@details')->name('details');
+	Route::post('changeProcess/{id}', 'HomeController@changeProcess')->name('changeProcess');
 });

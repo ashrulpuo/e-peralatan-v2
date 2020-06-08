@@ -14,10 +14,11 @@ class PermohonanController extends Controller
     {
         $input = $request->all();
         $pinjam['id_peralatan'] = [
-            'id_peralatan1' => $input['id_peralatan1'],
-            'id_peralatan2' => $input['id_peralatan2'],
-            'id_peralatan3' => $input['id_peralatan3']
+            'id_peralatan1' => !empty($input['id_peralatan1']) ? $input['id_peralatan1'] : 'null',
+            'id_peralatan2' => !empty($input['id_peralatan2']) ? $input['id_peralatan2'] : 'null',
+            'id_peralatan3' => !empty($input['id_peralatan3']) ? $input['id_peralatan3'] : 'null'
         ];
+        dd($pinjam['id_peralatan']);
         $input['status_permohonan'] = 1;
         $ref_num = rand(1000,9999);            
         $input['id_permohonan'] = 'P'.$ref_num;
@@ -35,7 +36,7 @@ class PermohonanController extends Controller
             if(!empty($pinjam['id_peralatan'])) {
                 PinjamPeralatan::create($pinjam);
             }
-            $item = Peralatan::find($pinjam['id_peralatan']);
+            $item = Peralatan::where('id', $pinjam['id_peralatan']);
             if (!empty($item)) {
                 $item->update(['status_peralatan' => 1]);
             }

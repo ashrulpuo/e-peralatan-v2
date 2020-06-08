@@ -15,13 +15,13 @@ class PeralatanTableSedeer extends Seeder
         [
             [
                 'peralatan' => 'Screen Projector',
-                'model' => '',
+                'model' => 'panasonic',
                 'no_asset' => 'JPS/BPA 64/I/09/637',
                 'status_peralatan' => 0
             ],
             [
                 'peralatan' => 'Screen Projector',
-                'model' => '',
+                'model' => 'panasonic',
                 'no_asset' => 'JPS/ICT/002003022/R/15/8',
                 'status_peralatan' => 0
             ],

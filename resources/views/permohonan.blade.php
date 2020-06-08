@@ -159,10 +159,10 @@ jQuery(document).ready(function ()
               console.log(data);
               $('#id_peralatan2').prop('disabled', false);
               jQuery('select[name="id_peralatan2"]').empty();
-              // $('select[name="id_peralatan2"]').append('<option value="" selected="selected">-Sila Pilih-</option>');
+              $('select[name="id_peralatan2"]').append('<option value="" selected="selected">-Sila Pilih-</option>');
               jQuery.each(data, function(key,value){
-                console.log(value['peralatan']);
-                 $('select[name="id_peralatan2"]').append('<option value="'+ value['id'] +'">'+ value['peralatan'] + ' (' + value['model'] + ' )' + '</option>');
+                //console.log(value['peralatan']);
+                $('select[name="id_peralatan2"]').append('<option value="'+ value['id'] +'">'+ value['peralatan'] + ' (' + value['model'] + ' )' + '</option>');
               });
            }
         });
@@ -188,6 +188,7 @@ jQuery(document).ready(function ()
               console.log(data);
               $('#id_peralatan3').prop('disabled', false);
               jQuery('select[name="id_peralatan3"]').empty();
+              $('select[name="id_peralatan3"]').append('<option value="" selected="selected">-Sila Pilih-</option>');
               jQuery.each(data, function(key,value){
                 console.log(value['peralatan']);
                  $('select[name="id_peralatan3"]').append('<option value="'+ key +'">'+ value['peralatan'] + ' (' + value['model'] + ' )' + '</option>');
