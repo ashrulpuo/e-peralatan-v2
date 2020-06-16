@@ -18,7 +18,7 @@ class PermohonanController extends Controller
             'id_peralatan2' => !empty($input['id_peralatan2']) ? $input['id_peralatan2'] : 'null',
             'id_peralatan3' => !empty($input['id_peralatan3']) ? $input['id_peralatan3'] : 'null'
         ];
-        dd($pinjam['id_peralatan']);
+        //dd($pinjam['id_peralatan']);
         $input['status_permohonan'] = 1;
         $ref_num = rand(1000,9999);            
         $input['id_permohonan'] = 'P'.$ref_num;
@@ -31,12 +31,15 @@ class PermohonanController extends Controller
         $pinjam['tarikh_pulang'] = date('Y-m-d', strtotime(strtr($input['tarikh_pulang'], '/', '-')));
         $running_num = $num->id_permohonan;
         $pinjam['id_permohonan'] = $running_num;
+        // dd($pinjam['id_peralatan']);
+
         foreach ($pinjam['id_peralatan'] as $key => $value) {
-            $pinjam['id_peralatan'] = $value;
+            $pinjam['id_peralatan'] = (int)$value;
             if(!empty($pinjam['id_peralatan'])) {
                 PinjamPeralatan::create($pinjam);
+                //dd('success');
             }
-            $item = Peralatan::where('id', $pinjam['id_peralatan']);
+            $item = Peralatan::where('id', $pinjam['id_peralatan'])->get()->first();
             if (!empty($item)) {
                 $item->update(['status_peralatan' => 1]);
             }

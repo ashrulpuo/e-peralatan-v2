@@ -60,7 +60,7 @@ class HomeController extends Controller
         $pemohonItems = Permohonan::where('id',$id)->with('peralatan.detailPeralatan')->get()->pluck('peralatan')->toArray();
         $id = Permohonan::select('id', 'id_permohonan')->where('id', $id)->first()->toArray();
         $peralatan = Peralatan::where('status_peralatan', 0)->get();
-        // dd($id);
+        // dd($pemohonItems);
         return view('admin.tukar-peralatan', ['pemohonItems' => $pemohonItems,'id' => $id, 'peralatan' => $peralatan]);
     }
 
@@ -71,20 +71,19 @@ class HomeController extends Controller
 
     public function changeProcess(Request $request, $id)
     {
-        // dd($request->all());
-        $data = [];
-        $data['peralatan1'] = $request->input('peralatan1');
-        $data['peralatan2'] = $request->input('peralatan2');
-        $data['peralatan3'] = $request->input('peralatan3');
+        $input = $request->all();
+        $no = Permohonan::where('id_permohonan', $id)->get()->first();
+        if(!empty($input['peralatan_satu'][0])) {
+            $getPeralatan = PinjamPeralatan::where('id_permohonan', $id)->where('id_peralatan', (int)$input['peralatan_satu'][0])->get()->first();
+            $getPeralatan->update(['id_peralatan' => (int)$input['peralatan_satu'][1]]);
 
-        $changeItems = array_filter($data);
-        dd($changeItems);
-        $peralatanPemohon = PinjamPeralatan::where('id_permohonan', $id)->get()->toArray();
-        dd($peralatanPemohon);
-        foreach($peralatanPemohon as $key => $peralatan)
-        {
+            $oldperalatan = Peralatan::where('id', $input['peralatan_satu'][0])->get()->first();
+            $oldperalatan->update(['status_peralatan' => 0]);
 
+            $newperalatan = Peralatan::where('id', $input['peralatan_satu'][1])->get()->first();
+            $newperalatan->update(['status_peralatan' => 1]);
         }
+        return redirect()->route('home.show', $no->id);
     }
 
     //code status 1 = new permohonan, 2 = approve, 3 = reject

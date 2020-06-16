@@ -67,7 +67,7 @@
 			<tr>
 				<th scope="row">Peralatan 2</th>
 				<td>
-					{{ !empty($data['peralatan'][1]['id_peralatan']) ? $data['peralatan'][1]['detail_peralatan']['peralatan'].' - '.$data['peralatan'][1]['detail_peralatan']['model'].' - '.$data['peralatan'][0]['detail_peralatan']['no_asset'] : 'Tiada' }}
+					{{ !empty($data['peralatan'][1]['id_peralatan']) ? $data['peralatan'][1]['detail_peralatan']['peralatan'].' - '.$data['peralatan'][1]['detail_peralatan']['model'].' - '.$data['peralatan'][1]['detail_peralatan']['no_asset'] : 'Tiada' }}
 				</td>
 			</tr>
 			<tr>

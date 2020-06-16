@@ -7,7 +7,7 @@
       <div class="row">
         <div class="wrapper-page-spp">
           <div class="panel panel-flat">
-            <a href="index.html"><img src="assets/img/official.jpg" width="980" height="180"></a>
+            <a href="/"><img src="assets/img/official.jpg" width="980" height="180"></a>
             <div style="padding:20px 20px 0">
               <div class="row">
                 <div class="col-md-12">
@@ -100,7 +100,7 @@
                           <select name="id_peralatan1" id="peralatan1" class="form-control" required>
                             <option value="" selected="selected">-Sila Pilih-</option>
                             @foreach($peralatan as $item)
-                            <option value="{{ $item->id }}">{{ $item->peralatan }} ({{ $item->model }})</option>
+                            <option value="{{ $item->id }}"> {{ $item->peralatan }} ({{ $item->model }})</option>
                             @endforeach
                           </select>
                         </div>
@@ -162,7 +162,7 @@ jQuery(document).ready(function ()
               $('select[name="id_peralatan2"]').append('<option value="" selected="selected">-Sila Pilih-</option>');
               jQuery.each(data, function(key,value){
                 //console.log(value['peralatan']);
-                $('select[name="id_peralatan2"]').append('<option value="'+ value['id'] +'">'+ value['peralatan'] + ' (' + value['model'] + ' )' + '</option>');
+                $('select[name="id_peralatan2"]').append('<option value="'+ value['id'] +'">' + value['peralatan'] + ' (' + value['model'] + ' )' + '</option>');
               });
            }
         });
@@ -191,7 +191,7 @@ jQuery(document).ready(function ()
               $('select[name="id_peralatan3"]').append('<option value="" selected="selected">-Sila Pilih-</option>');
               jQuery.each(data, function(key,value){
                 console.log(value['peralatan']);
-                 $('select[name="id_peralatan3"]').append('<option value="'+ key +'">'+ value['peralatan'] + ' (' + value['model'] + ' )' + '</option>');
+                 $('select[name="id_peralatan3"]').append('<option value="'+ value['id'] +'">'+ value['peralatan'] + ' (' + value['model'] + ' )' + '</option>');
               });
            }
         });

@@ -15,63 +15,27 @@
 				@csrf
 				@if (!empty($pemohonItems[0][0]['detail_peralatan']['peralatan']))
 				<div class="form-group">
-					<label class="col-sm-3 control-label"><span style="color:red">* </span>Peralatan 1</label>
-					<div class="col-sm-6">
-						<select name="peralatan1" id="peralatan1" class="form-control">
-							<option value="" selected="selected">-Sila Pilih-</option>
-							<option value="" selected="selected"  disabled>
-								{{ $pemohonItems[0][0]['detail_peralatan']['peralatan'] }} -- 
-								{{ $pemohonItems[0][0]['detail_peralatan']['model'] }} -- 
-								{{ $pemohonItems[0][0]['detail_peralatan']['no_asset'] }}
-							</option>
-							@foreach($peralatan as $key => $item)
-							<option value="{{ $item->id }}">{{ $item->peralatan }} ({{ $item->model }})</option>
-							@endforeach
-
-						</select>
-					</div>
-				</div>
-				@endif
-				@if (!empty($pemohonItems[0][1]['detail_peralatan']['peralatan']))
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Peralatan 2</label>
-					<div class="col-sm-6">
-						<select name="peralatan2" id="peralatan2" class="form-control">
-							<option value="" selected="selected">-Sila Pilih-</option>
-							<option value="" selected="selected" disabled>
-								{{ $pemohonItems[0][1]['detail_peralatan']['peralatan'] }} -- 
-								{{ $pemohonItems[0][1]['detail_peralatan']['model'] }} -- 
-								{{ $pemohonItems[0][1]['detail_peralatan']['no_asset'] }}
-							</option>
-							@foreach($peralatan as $key => $item)
-							<option value="{{ $item->id }}">{{ $item->peralatan }} ({{ $item->model }})</option>
-							@endforeach
-						</select>
-					</div>
-				</div>
-				@endif
-				@if (!empty($pemohonItems[0][2]['detail_peralatan']['peralatan']))
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Peralatan 3</label>
-					<div class="col-sm-6">
-						<select name="peralatan3" id="peralatan3" class="form-control">
-							<option value="" selected="selected">-Sila Pilih-</option>
-							<option value="" selected="selected">
-								{{ $pemohonItems[0][2]['detail_peralatan']['peralatan'] }} -- 
-								{{ $pemohonItems[0][2]['detail_peralatan']['model'] }} -- 
-								{{ $pemohonItems[0][2]['detail_peralatan']['no_asset'] }}
-							</option>
-							@foreach($peralatan as $key => $item)
-							<option value="{{ $item->id }}">{{ $item->peralatan }} ({{ $item->model }})</option>
-							@endforeach
-						</select>
-					</div>
+					<label class="col-sm-2 control-label"><span style="color:red">* </span>Peralatan 1</label>
+					<div class="row">
+						<div class="col-xs-4">
+							<input class="form-control" type="text" value="{{ $pemohonItems[0][0]['detail_peralatan']['peralatan'] }} - {{ $pemohonItems[0][0]['detail_peralatan']['model'] }} - {{ $pemohonItems[0][0]['detail_peralatan']['no_asset'] }}" readonly>
+							<input class="form-control" type="hidden" name="peralatan_satu[]" value="{{ $pemohonItems[0][0]['detail_peralatan']['id'] }}" placeholder="{{ $pemohonItems[0][0]['detail_peralatan']['peralatan'] }} - {{ $pemohonItems[0][0]['detail_peralatan']['model'] }} - {{ $pemohonItems[0][0]['detail_peralatan']['no_asset'] }}" readonly>
+						</div>
+						<div class="col-xs-1">change</div>
+						<div class="col-xs-4">
+							<select name="peralatan_satu[]" id="peralatan_satu" class="form-control">
+								@foreach($peralatan as $key => $item)
+								<option value="{{ $item->id }}">{{ $item->peralatan }} ({{ $item->model }})</option>
+								@endforeach
+							</select>
+						</div>
+					 </div>
 				</div>
 				@endif
 				<div class="form-group">
 					<div class="col-sm-12" style="text-align: center">
 
-						<button name="Kemaskini" type="submit" id="Kemaskini" value="true" class="btn btn-primary">Kemaskini</button>
+						<button type="submit" id="Kemaskini" value="true" class="btn btn-primary">Kemaskini</button>
 						<a href="{{ route('home.show', $id['id']) }}"><button name="Kembali" type="button" id="Kembali" value="true" class="btn"> << Kembali </button></a>
 					</div>
 				</div>

@@ -79,8 +79,8 @@
 									</td>
 									<td>Peralatan 1: {{ !empty($pemohon['peralatan'][0]['detail_peralatan']['peralatan']) ? $pemohon['peralatan'][0]['detail_peralatan']['peralatan'] : '-' }}<br>
 
-										Peralatan 2: {{ !empty($pemohon['peralatan'][1]['id_peralatan']) ? $pemohon['peralatan'][1]['detail_peralatan']['peralatan'] : '-' }}<br>
-										Peralatan 3: {{ !empty($pemohon['peralatan'][2]['id_peralatan']) ? $pemohon['peralatan'][2]['detail_peralatan']['peralatan'] : '-' }}
+										Peralatan 2: {{ !empty($pemohon['peralatan'][1]['detail_peralatan']['peralatan']) ? $pemohon['peralatan'][1]['detail_peralatan']['peralatan'] : '-' }}<br>
+										Peralatan 3: {{ !empty($pemohon['peralatan'][2]['detail_peralatan']['peralatan']) ? $pemohon['peralatan'][2]['detail_peralatan']['peralatan'] : '-' }}
 									</td>
 								</tr>
 								@endforeach

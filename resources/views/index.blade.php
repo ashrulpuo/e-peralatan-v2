@@ -7,7 +7,7 @@
       <div class="row">
         <div class="wrapper-page-spp">
           <div class="panel panel-flat">
-            <a href="index.html"><img src="assets/img/official.jpg" width="980" height="180"></a>
+            <a href="/"><img src="assets/img/official.jpg" width="980" height="180"></a>
             <div style="padding:20px 20px 0">
               <div id="carousel-example-captions" data-ride="carousel" class="carousel slide mb-20">
                 <ol class="carousel-indicators">
