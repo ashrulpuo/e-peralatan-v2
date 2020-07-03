@@ -37,10 +37,11 @@ class HomeController extends Controller
         return view('admin.proses-permohonan', ['data' => $permohonan]);
     }
 
-    public function approve($id)
+    public function approve(Request $request,$id)
     {
+        $input = $request->all();
         $pemohon = Permohonan::find($id);
-        $pemohon->update(['status_permohonan' => 2]);
+        $pemohon->update(['status_permohonan' => 2, 'nama_pengeluar' => $input['nama_pengeluar']]);
         return redirect()->route('home.index');
     }
 
@@ -72,16 +73,38 @@ class HomeController extends Controller
     public function changeProcess(Request $request, $id)
     {
         $input = $request->all();
+        // dd($input);
         $no = Permohonan::where('id_permohonan', $id)->get()->first();
         if(!empty($input['peralatan_satu'][0])) {
-            $getPeralatan = PinjamPeralatan::where('id_permohonan', $id)->where('id_peralatan', (int)$input['peralatan_satu'][0])->get()->first();
-            $getPeralatan->update(['id_peralatan' => (int)$input['peralatan_satu'][1]]);
+            $getPeralatanSatu = PinjamPeralatan::where('id_permohonan', $id)->where('id_peralatan', (int)$input['peralatan_satu'][0])->get()->first();
+            $getPeralatanSatu->update(['id_peralatan' => (int)$input['peralatan_satu'][1]]);
 
-            $oldperalatan = Peralatan::where('id', $input['peralatan_satu'][0])->get()->first();
-            $oldperalatan->update(['status_peralatan' => 0]);
+            $oldperalatanSatu = Peralatan::where('id', $input['peralatan_satu'][0])->get()->first();
+            $oldperalatanSatu->update(['status_peralatan' => 0]);
 
-            $newperalatan = Peralatan::where('id', $input['peralatan_satu'][1])->get()->first();
-            $newperalatan->update(['status_peralatan' => 1]);
+            $newperalatanSatu = Peralatan::where('id', $input['peralatan_satu'][1])->get()->first();
+            $newperalatanSatu->update(['status_peralatan' => 1]);
+        }
+        if(!empty($input['peralatan_dua'][0])) {
+            $getPeralatanDua = PinjamPeralatan::where('id_permohonan', $id)->where('id_peralatan', (int)$input['peralatan_dua'][0])->get()->first();
+            // dd($getPeralatan);
+            $getPeralatanDua->update(['id_peralatan' => (int)$input['peralatan_dua'][1]]);
+
+            $oldperalatanDua = Peralatan::where('id', $input['peralatan_dua'][0])->get()->first();
+            $oldperalatanDua->update(['status_peralatan' => 0]);
+
+            $newperalatanDua = Peralatan::where('id', $input['peralatan_dua'][1])->get()->first();
+            $newperalatanDua->update(['status_peralatan' => 1]);
+        }
+        if(!empty($input['peralatan_tiga'][0])) {
+            $getPeralatanTiga = PinjamPeralatan::where('id_permohonan', $id)->where('id_peralatan', (int)$input['peralatan_tiga'][0])->get()->first();
+            $getPeralatanTiga->update(['id_peralatan' => (int)$input['peralatan_tiga'][1]]);
+
+            $oldperalatanTiga = Peralatan::where('id', $input['peralatan_tiga'][0])->get()->first();
+            $oldperalatanTiga->update(['status_peralatan' => 0]);
+
+            $newperalatanTiga = Peralatan::where('id', $input['peralatan_tiga'][1])->get()->first();
+            $newperalatanTiga->update(['status_peralatan' => 1]);
         }
         return redirect()->route('home.show', $no->id);
     }

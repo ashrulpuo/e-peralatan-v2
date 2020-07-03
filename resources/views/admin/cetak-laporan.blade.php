@@ -15,7 +15,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Semakan Permohonan</title>
+	<title>BORANG PERMOHONAN PERGERAKAN/PINJAMAN ASET ALIH</title>
 	<!-- Default CSS Header -->
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -82,7 +82,7 @@
 												<th>Bahagian:</th>
 												<td>{{ $data['bahagian'] }}</td>
 												<th>Nama Pengeluar:</th>
-												<td>En Khoir</td> <!-- Admin incharge-->
+												<td>{{ $data['nama_pengeluar'] }}</td> <!-- Admin incharge-->
 											</tr>
 										</table>
 										<br>
@@ -105,28 +105,29 @@
 											</tr>
 											<tr>
 												@foreach($data['peralatan'] as $key => $item)
+												{{-- peralatan start here --}}
 												<tr>
 													<td>{{ $key + 1 }}</td>
 													<td>{{ $item['detail_peralatan']['no_asset']}}  </td>
 													<td> {{ $item['detail_peralatan']['model']}} </td>
-													<td> {{ $item['tarikh_pinjam']}} </td>
-													<td>{{ $item['tarikh_pulang']}}  </td>
+													<td> {{ date('d-m-yy', strtotime($item['tarikh_pinjam'])) }} </td>
+													<td>{{ date('d-m-yy', strtotime($item['tarikh_pulang'])) }}  </td>
 													<td>  
 														@if($data['status_permohonan'] == 1)
 														Permohonan Baru
 														@elseif($data['status_permohonan'] == 2)
-														Telah Diluluskan
+														Lulus
 														@elseif($data['status_permohonan'] == 3)
 														Permohonan Ditolak
 														@else($data['status_permohonan'] == 4)
-														Telah Diluluskan
+														Lulus
 														@endif
 													</td>
-													<td> {{ date('d-m-y', strtotime($item['updated_at'])) }} </td>
-													<td> {{ date('d-m-y', strtotime($item['updated_at'])) }} </td>
+													<td> {{ date('d-m-yy', strtotime($item['updated_at'])) }} </td>
+													<td> {{ date('d-m-yy', strtotime($item['updated_at'])) }} </td>
 													<td> 
 														@if($data['status_permohonan'] == 4)
-														peralatan dihantar
+														Peralatan dihantar
 														@endif
 													</td>
 												</tr>
@@ -139,15 +140,15 @@
 													<br>(Tandatangan Peminjam)</p>
 													<p>Nama: {{ $data['nama'] }}<br>
 														Jawatan: {{ $data['jawatan'] }}<br>
-													Tarikh:</p>
+													Tarikh: {{ date('d-m-yy', strtotime($item['tarikh_pinjam'])) }}</p>
 												</td>
 												<td colspan="5">
 													<p>&nbsp;&nbsp;</p>
 													<p>.....................................
 														<br>(Tandatangan Pelulus)</p>
-														<p>Nama: En Khoir<br>
-															Jawatan:<br>
-														Tarikh:</p>
+														<p>Nama: En Mohd Khoir Bin Shafie<br>
+															Jawatan:Pegawai Teknologi Maklumat<br>
+														Tarikh:{{ date('d-m-yy', strtotime($item['tarikh_pinjam'])) }}</p>
 													</td>
 												</tr>
 												<tr>
@@ -157,15 +158,15 @@
 															<br>(Tandatangan Pemulang)</p>
 															<p>Nama: {{ $data['nama_pemulang'] }}<br>
 																Jawatan: {{ $data['jawatan_pemulang'] }}<br>
-															Tarikh:</p>
+															Tarikh:{{date('d-m-yy')}}</p>
 														</td>
 														<td colspan="5"> 
 															<p>&nbsp;&nbsp;</p>
 															<p>.....................................
 																<br>(Tandatangan Penerima)</p>
-																<p>Nama:<br>
-																	Jawatan:<br>
-																Tarikh:</p>
+																<p>Nama:{{ $data['nama_penerima']}}<br>
+																	Jawatan:{{$data ['jawatan_penerima']}}<br>
+																Tarikh:{{date('d-m-yy')}}</p>
 															</td>
 														</tr>
 													</table>
@@ -178,13 +179,17 @@
 						</div>
 					</div>
 				</div>
+				<div align="right">
+
+				<button onclick="window.print()" align="right">Cetak</button>
+								</div>
 			</div>
-			<div class="footer text-footer text-center">
+			{{--<div class="footer text-footer text-center">
 				<p>Bahagian Pengurusan Maklumat (BICT)<br/>
 					Jabatan Pengairan Dan Saliran Negeri Selangor<br />
 					Tingkat 5 Blok Podium Selatan Bangunan SSAAS<br />
 				40503 Shah Alam</p>
 				<p>Copyright Reserved © 2020 Bahagian Pengurusan Maklumat (BICT)<br>
-				</div>
+				</div> --}}
 			</body>
 			</html>

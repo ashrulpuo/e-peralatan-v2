@@ -9,7 +9,7 @@
 
 	.topnav {
 		overflow: hidden;
-		background-color:  #a6a6a6;
+		background-color:  #2e3192;
 	}
 
 	.topnav a {
@@ -22,12 +22,12 @@
 	}
 
 	.topnav a:hover {
-		background-color: #ddd;
+		background-color: #9ea0e0;
 		color: black;
 	}
 
 	.topnav a.active {
-		background-color: #80bfff;
+		background-color: #00ace6;
 		color: white;
 	}
 	table, td, th {
@@ -52,10 +52,12 @@
 								<a class="active" href="{{ route('home.index') }}">Permohonan Baru</a>
 								<a href="{{ route('senarai.index') }}">Senarai Permohonan</a>
 								<a href="{{ route('laporan.index') }}">Laporan</a>
+									{{--Tambah Setup dan Konfigurasi
+									<a class="{{ (request()->is('laporan')) ? 'active' : '' }}" href="{{ route('laporan.index') }}">Setup & Konfigurasi</a>--}}
 								<a class="dropdown-item" href="{{ route('logout') }}"
 								onclick="event.preventDefault();
 								document.getElementById('logout-form').submit();">
-								{{ __('Logout') }}
+								{{ __('Keluar') }}
 							</a>
 
 							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

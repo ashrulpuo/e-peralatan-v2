@@ -45,8 +45,8 @@
 									<div class="box-body">
 										<div class="alert alert-success alert-dismissible">
 											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-											<h4><i class="icon fa fa-check"></i> no permohonan salah</h4>
-											sila cek semula no permohonan anda.
+											<h4><i class="icon fa fa-check"></i> No permohonan salah</h4>
+											Sila semak semula no permohonan anda.
 										</div>
 									</div>
 									<!-- /.box-body -->

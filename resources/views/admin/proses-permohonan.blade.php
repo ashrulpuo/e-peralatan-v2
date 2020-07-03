@@ -79,11 +79,45 @@
 		</tbody>
 	</table>
 	<br>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Maklumat Pengeluar</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			</div>
+			<div class="modal-body">
+				<form action="{{ route('approve', $data['id'] ) }}">
+					<div class="form-group">
+						<label class="col-sm-3 control-label"><span style="color:red">* </span>Nama</label>
+						<div class="col-sm-8">
+						<input type="text" name="nama_pengeluar" id="nama" class="form-control" placeholder="Nama Pengeluar" required>
+						</div>
+					</div>
+					<br>
+					<br>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Hantar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		</div>
+	</div>
+
 	<div class="form-group">
 		<div class="row">
 			<div class="col-sm-12" style="text-align: right;">
 				@if($data['status_permohonan'] == 1)
-				<a href="{{ route('approve', $data['id'] )}}"><button type="button" id="Lulus" value="true" class="btn btn-success waves-effect waves-light">Lulus</button></a>
+				{{-- <a href="{{ route('approve', $data['id'] )}}"><button type="button" id="Lulus" value="true" class="btn btn-success waves-effect waves-light">Lulus</button></a> --}}
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+					Lulus
+				</button>
 				<a href="{{ route('home.reject', $data['id'] )}}"><button type="button" id="Tidak_lulus" value="true" class="btn btn-warning">Tidak Lulus</button></a>
 				<a href="{{ route('home.change', $data['id'] )}}"><button type="button" id="tukarPeralatan" value="true" class="btn btn-info">Tukar Peralatan</button></a>
 				@endif
@@ -94,3 +128,19 @@
 	</div>
 </div>
 @endsection
+@push('custom-scripts')
+<script>
+	var url = "{{URL::to('report/filter')}}/"+ id
+	$.ajax({
+		url: url,  
+		method:"POST",
+		data:{
+			startDate:startDate,
+			endDate:endDate,
+			disiplin:disiplin,
+			gender:gender,
+			race:race
+		}
+	});
+</script>
+@endpush

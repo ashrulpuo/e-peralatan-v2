@@ -3116,8 +3116,8 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary {
   color: #fff;
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #00BCD4;
+  border-color: #00BCD4;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -5689,7 +5689,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #2196F3;
+  background-color: #2e3192;
   border-color: #2196F3;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {

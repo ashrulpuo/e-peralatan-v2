@@ -21,9 +21,13 @@ class CreatePemohonanTable extends Migration
             $table->string('tujuan');
             $table->string('tempat_digunakan');
             $table->integer('status_permohonan');
+            $table->string('nama_pengeluar');
             $table->string('id_permohonan');
             $table->string('nama_pemulang');
             $table->string('jawatan_pemulang');
+            $table->string('nama_penerima');
+            $table->string('jawatan_penerima');
+
             $table->timestamps();
         });
     }

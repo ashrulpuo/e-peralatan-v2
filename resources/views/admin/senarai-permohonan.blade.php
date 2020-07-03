@@ -10,7 +10,7 @@
 
 	.topnav {
 		overflow: hidden;
-		background-color:  #a6a6a6;
+		background-color:  #2e3192;
 	}
 
 	.topnav a {
@@ -23,12 +23,12 @@
 	}
 
 	.topnav a:hover {
-		background-color: #ddd;
+		background-color: #9ea0e0;
 		color: black;
 	}
 
 	.topnav a.active {
-		background-color: #80bfff;
+		background-color: #00ace6;
 		color: white;
 	}
 	table, td, th {

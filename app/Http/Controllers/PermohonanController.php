@@ -20,6 +20,9 @@ class PermohonanController extends Controller
         ];
         //dd($pinjam['id_peralatan']);
         $input['status_permohonan'] = 1;
+        $input['nama_pengeluar'] = 0;
+        $input['nama_penerima'] = 0;
+        $input['jawatan_penerima'] = 0;
         $ref_num = rand(1000,9999);            
         $input['id_permohonan'] = 'P'.$ref_num;
         $input['nama_pemulang'] = 0;
@@ -78,4 +81,4 @@ class PermohonanController extends Controller
         return json_encode($peralatan);
     }
 
-}
+} 

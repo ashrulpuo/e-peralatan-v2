@@ -17,6 +17,7 @@ class PulangController extends Controller
     public function update(Request $request, $id)
     {
         $input = $request->all();
+        // dd($input);
         $input['status_permohonan'] = 4;
         $input['updated_at'] = date('Y-m-d H:i:s');
         $pemohon = Permohonan::find($id);
