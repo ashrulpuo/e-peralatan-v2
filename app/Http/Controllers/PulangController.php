@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Peralatan;
 use App\Permohonan;
+use App\User;
 use Illuminate\Http\Request;
 
 class PulangController extends Controller
 {
     public function show($id)
     {
+        $admin = \Auth::user();
         $pemohon = Permohonan::where('id',$id)->with('peralatan.detailPeralatan')->first()->toArray();
-        return view('admin.pulang-peralatan', ['data' => $pemohon]);
+        return view('admin.pulang-peralatan', ['data' => $pemohon, 'admin' => $admin]);
     }
 
     public function update(Request $request, $id)

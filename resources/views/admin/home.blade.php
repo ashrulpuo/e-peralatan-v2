@@ -52,8 +52,7 @@
 								<a class="active" href="{{ route('home.index') }}">Permohonan Baru</a>
 								<a href="{{ route('senarai.index') }}">Senarai Permohonan</a>
 								<a href="{{ route('laporan.index') }}">Laporan</a>
-									{{--Tambah Setup dan Konfigurasi
-									<a class="{{ (request()->is('laporan')) ? 'active' : '' }}" href="{{ route('laporan.index') }}">Setup & Konfigurasi</a>--}}
+								<a class="{{ (request()->is('daftar')) ? 'active' : '' }}" href="{{ route('daftar.index') }}">Daftar Admin</a>
 								<a class="dropdown-item" href="{{ route('logout') }}"
 								onclick="event.preventDefault();
 								document.getElementById('logout-form').submit();">

@@ -34,7 +34,7 @@
 				<td>{{ date('d-m-yy', strtotime($data['peralatan'][0]['tarikh_pinjam'])) }} </td>
 			</tr>
 			<tr>
-				<th scope="row">Tarikh Pulang</th>
+				<th scope="row">Tarikh Dijangka Pulang</th>
 				<td>{{ date('d-m-yy', strtotime($data['peralatan'][0]['tarikh_pulang'])) }} </td>
 			</tr>
 			<tr>
@@ -95,13 +95,13 @@
 					<div class="form-group">
 						<label class="col-sm-3 control-label"><span style="color:red">* </span>Nama</label>
 						<div class="col-sm-8">
-						<input type="text" name="nama_pengeluar" id="nama" class="form-control" placeholder="Nama Pengeluar" required>
+						<input type="text" name="nama_pengeluar" value="{{ $namaPengeluar }}" id="nama" class="form-control" placeholder="Nama Pengeluar" required readonly>
 						</div>
 					</div>
 					<br>
 					<br>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 						<button type="submit" class="btn btn-primary">Hantar</button>
 					</div>
 				</form>

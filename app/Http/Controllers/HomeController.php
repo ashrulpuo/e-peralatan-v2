@@ -33,8 +33,9 @@ class HomeController extends Controller
 
     public function show($id)
     {
+        $namaPengeluar = \Auth::user()->name;
         $permohonan = Permohonan::where('id',$id)->with('peralatan.detailPeralatan')->first()->toArray();
-        return view('admin.proses-permohonan', ['data' => $permohonan]);
+        return view('admin.proses-permohonan', ['data' => $permohonan, 'namaPengeluar' => $namaPengeluar]);
     }
 
     public function approve(Request $request,$id)

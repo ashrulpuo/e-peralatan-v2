@@ -60,7 +60,7 @@
 												<p align="right"> AM 2.4 Lampiran A <br> <b>KEW.PA-9</b></p>
 												<th>No Permohonan:</th>
 												<td>{{ $data['id_permohonan'] }}</td>
-											</tr>
+									 		</tr>
 										</table>
 									</div>
 									<div class="panel-body">
@@ -127,7 +127,7 @@
 													<td> {{ date('d-m-yy', strtotime($item['updated_at'])) }} </td>
 													<td> 
 														@if($data['status_permohonan'] == 4)
-														Peralatan dihantar
+														Selesai
 														@endif
 													</td>
 												</tr>
@@ -146,7 +146,7 @@
 													<p>&nbsp;&nbsp;</p>
 													<p>.....................................
 														<br>(Tandatangan Pelulus)</p>
-														<p>Nama: En Mohd Khoir Bin Shafie<br>
+														<p>Nama: {{ !empty($person->nama_penuh) ? $person->nama_penuh : '' }}<br>
 															Jawatan:Pegawai Teknologi Maklumat<br>
 														Tarikh:{{ date('d-m-yy', strtotime($item['tarikh_pinjam'])) }}</p>
 													</td>
@@ -181,15 +181,16 @@
 				</div>
 				<div align="right">
 
-				<button onclick="window.print()" align="right">Cetak</button>
+				<button id="printPageButton" onclick="window.print()" align="right">Cetak</button>
+				<a href="{{ route('laporan.index' )}}"><button type="button" id="Kembali" value="true" class="btn"> << Kembali </button></a>
 								</div>
 			</div>
-			{{--<div class="footer text-footer text-center">
-				<p>Bahagian Pengurusan Maklumat (BICT)<br/>
-					Jabatan Pengairan Dan Saliran Negeri Selangor<br />
-					Tingkat 5 Blok Podium Selatan Bangunan SSAAS<br />
-				40503 Shah Alam</p>
-				<p>Copyright Reserved © 2020 Bahagian Pengurusan Maklumat (BICT)<br>
-				</div> --}}
+				<style>
+					@media print {
+							#printPageButton {
+							display: none;
+						}
+					}
+				</style>
 			</body>
 			</html>

@@ -34,7 +34,7 @@
 				<div class="col-sm-6">
 					@foreach($data['peralatan'] as $key => $data)
 					<div class="checkbox">
-						<label><input type="checkbox" name="peralatan[]" value="{{ $data['detail_peralatan']['id']}}" /> {{ $data['detail_peralatan']['no_asset']}}</label>
+						<label><input type="checkbox" name="peralatan[]" value="{{ $data['detail_peralatan']['id']}}" required /> {{ $data['detail_peralatan']['no_asset']}}</label>
 					</div>
 					@endforeach
 				</div>
@@ -46,14 +46,14 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label"><span style="color:red">* </span>Nama</label>
 				<div class="col-sm-4">
-				  <input type="text" name="nama_penerima" value="" id="nama" class="form-control" placeholder="Nama Penerima" required>
+				  <input type="text" name="nama_penerima" value="{{ $admin->name }}" readonly id="nama" class="form-control" placeholder="Nama Penerima" required>
 				</div>
 			  </div>
 			  <br>
 			  <div class="form-group">
 				<label class="col-sm-3 control-label"><span style="color:red">* </span>Jawatan</label>
 				<div class="col-sm-4">
-					<input type="text" name="jawatan_penerima" value="" id="nama" class="form-control" placeholder="Jawatan Penerima" required>
+					<input type="text" name="jawatan_penerima" value="{{ $admin->jawatan }}" readonly id="nama" class="form-control" placeholder="Jawatan Penerima" required>
 				</div>
 			</div>
 

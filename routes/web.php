@@ -47,4 +47,5 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('approve/{id}', 'HomeController@approve')->name('approve');
 	Route::get('details', 'HomeController@details')->name('details');
 	Route::post('changeProcess/{id}', 'HomeController@changeProcess')->name('changeProcess');
+	Route::resource('daftar', 'RegisterAdminController');
 });

@@ -57,20 +57,19 @@
 											<a class="{{ (request()->is('home')) ? 'active' : '' }}" href="{{ route('home.index') }}">Permohonan Baru</a>
 											<a class="{{ (request()->is('senarai')) ? 'active' : '' }}" href="{{ route('senarai.index') }}">Senarai Permohonan</a>
 											<a class="{{ (request()->is('laporan')) ? 'active' : '' }}" href="{{ route('laporan.index') }}">Laporan</a>
-											{{--Tambah Setup dan Konfigurasi
-											<a class="{{ (request()->is('setup')) ? 'active' : '' }}" href="{{ route('setup.index') }}">Setup & Konfigurasi</a>--}}
+											<a class="{{ (request()->is('daftar')) ? 'active' : '' }}" href="{{ route('daftar.index') }}">Daftar Admin</a>
 											<a class="dropdown-item" href="{{ route('logout') }}"
 											onclick="event.preventDefault();
 											document.getElementById('logout-form').submit();">
 											{{ __('Keluar') }}
-										</a>
+											</a>
 
-										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-											@csrf
-										</form>
-									</div>
-									@yield('content')
-								</div> 
+											<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+												@csrf
+											</form>
+										</div>
+										@yield('content')
+									</div> 
 							</div>
 						</div>
 					</div>
